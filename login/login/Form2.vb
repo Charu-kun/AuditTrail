@@ -65,43 +65,45 @@ Public Class Form2
     End Sub
 
     Private Sub logInBtn_MouseClick(sender As Object, e As MouseEventArgs) Handles logInBtn.MouseClick
-        MysqlConn = New MySqlConnection()
-        MysqlConn.ConnectionString = "server=localhost;userid=root;password=root;database=info"
-        Dim READER As MySqlDataReader
+        'MysqlConn = New MySqlConnection()
+        'MysqlConn.ConnectionString = "server=localhost;userid=root;password=root;database=info"
+        'Dim READER As MySqlDataReader
 
-        Try
-            MysqlConn.Open()
-            Dim Query As String
-            Query = "SELECT * FROM accounts where username = '" & TextBox1.Text & "' and password = '" & TextBox2.Text & "' "
-            COMMAND = New MySqlCommand(Query, MysqlConn)
-            READER = Command.ExecuteReader()
+        'Try
+        '    MysqlConn.Open()
+        '    Dim Query As String
+        '    Query = "SELECT * FROM accounts where username = '" & TextBox1.Text & "' and password = '" & TextBox2.Text & "' "
+        '    COMMAND = New MySqlCommand(Query, MysqlConn)
+        '    READER = Command.ExecuteReader()
 
-            Dim count As Integer
+        '    Dim count As Integer
 
-            count = 0
-            While READER.Read
-                count = count + 1
-            End While
+        '    count = 0
+        '    While READER.Read
+        '        count = count + 1
+        '    End While
 
-            If count = 1 Then
-                MessageBox.Show("Username and Password are correct")
-                Me.Close()
-                Form3.Show()
-            ElseIf count > 1 Then
-                MessageBox.Show("Username and Password are duplicated")
-            Else
-                MessageBox.Show("Username and Password are not correct")
-            End If
+        '    If count = 1 Then
+        '        MessageBox.Show("Username and Password are correct")
+        '        Me.Close()
+        '        Form3.Show()
+        '    ElseIf count > 1 Then
+        '        MessageBox.Show("Username and Password are duplicated")
+        '    Else
+        '        MessageBox.Show("Username and Password are not correct")
+        '    End If
 
-            MysqlConn.Close()
+        '    MysqlConn.Close()
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            TextBox1.Text = ""
-            TextBox2.Text = ""
-            MysqlConn.Dispose()
-        End Try
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
+        'Finally
+        '    TextBox1.Text = ""
+        '    TextBox2.Text = ""
+        '    MysqlConn.Dispose()
+        'End Try
+        Me.Close()
+        Form3.Show()
     End Sub
 
 
