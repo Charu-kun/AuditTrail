@@ -1,5 +1,8 @@
-﻿Public Class Form3
+﻿Imports System.Xml
 
+Public Class Form3
+
+    Dim x As Integer
     Public Sub childform(ByVal panel As Form)
         contentPane.Controls.Clear()
         panel.TopLevel = False
@@ -31,7 +34,6 @@
             Timer2.Enabled = True
         ElseIf PanelMenu.Width = 85 Then
             Timer1.Enabled = True
-
         End If
     End Sub
 
@@ -44,20 +46,29 @@
 
     Private Sub PanelBtn1_Click(sender As Object, e As EventArgs) Handles PanelBtn1.Click
         childform(panelForm1)
-        panelForm1.AllClear()
+        'panelForm1.AllClear()
         panelForm2.Close()
         panelForm3.Close()
+        panelIndicator1.Show()
+        panelIndicator2.Hide()
+        panelIndicator3.Hide()
     End Sub
 
     Private Sub PanelBtn2_Click(sender As Object, e As EventArgs) Handles PanelBtn2.Click
         childform(panelForm2)
         panelForm3.Close()
+        panelIndicator2.Show()
+        panelIndicator1.Hide()
+        panelIndicator3.Hide()
     End Sub
 
     Private Sub PanelBtn3_Click(sender As Object, e As EventArgs) Handles PanelBtn3.Click
         panelForm1.Close()
         panelForm2.Close()
         childform(panelForm3)
+        panelIndicator3.Show()
+        panelIndicator1.Hide()
+        panelIndicator2.Hide()
     End Sub
 
 
@@ -66,10 +77,19 @@
     End Sub
 
     Private Sub startUpBtn_Click(sender As Object, e As EventArgs) Handles startUpBtn.Click
+        panelIndicator1.Show()
+        panelIndicator2.Hide()
+        panelIndicator3.Hide()
         If PanelMenu.Width = 85 Then
             Timer1.Enabled = True
         End If
         childform(panelForm1)
+    End Sub
+
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        panelIndicator1.Hide()
+        panelIndicator2.Hide()
+        panelIndicator3.Hide()
     End Sub
 
 End Class

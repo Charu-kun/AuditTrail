@@ -26,6 +26,9 @@ Partial Class Form3
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.panelIndicator3 = New Guna.UI.WinForms.GunaPictureBox()
+        Me.panelIndicator2 = New Guna.UI.WinForms.GunaPictureBox()
+        Me.panelIndicator1 = New Guna.UI.WinForms.GunaPictureBox()
         Me.logOutBtn = New Guna.UI.WinForms.GunaButton()
         Me.PanelBtn3 = New Guna.UI.WinForms.GunaButton()
         Me.PanelBtn2 = New Guna.UI.WinForms.GunaButton()
@@ -45,6 +48,9 @@ Partial Class Form3
         Me.lblClock = New Guna.UI.WinForms.GunaLabel()
         Me.Clock = New System.Windows.Forms.Timer(Me.components)
         Me.PanelMenu.SuspendLayout()
+        CType(Me.panelIndicator3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.panelIndicator2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.panelIndicator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.PanelContainer.SuspendLayout()
         CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +69,9 @@ Partial Class Form3
         'PanelMenu
         '
         Me.PanelMenu.BackColor = System.Drawing.Color.White
+        Me.PanelMenu.Controls.Add(Me.panelIndicator3)
+        Me.PanelMenu.Controls.Add(Me.panelIndicator2)
+        Me.PanelMenu.Controls.Add(Me.panelIndicator1)
         Me.PanelMenu.Controls.Add(Me.logOutBtn)
         Me.PanelMenu.Controls.Add(Me.PanelBtn3)
         Me.PanelMenu.Controls.Add(Me.PanelBtn2)
@@ -75,6 +84,36 @@ Partial Class Form3
         Me.PanelMenu.Size = New System.Drawing.Size(85, 720)
         Me.PanelMenu.TabIndex = 2
         '
+        'panelIndicator3
+        '
+        Me.panelIndicator3.BackColor = System.Drawing.Color.Silver
+        Me.panelIndicator3.BaseColor = System.Drawing.Color.DimGray
+        Me.panelIndicator3.Location = New System.Drawing.Point(-114, 266)
+        Me.panelIndicator3.Name = "panelIndicator3"
+        Me.panelIndicator3.Size = New System.Drawing.Size(120, 85)
+        Me.panelIndicator3.TabIndex = 7
+        Me.panelIndicator3.TabStop = False
+        '
+        'panelIndicator2
+        '
+        Me.panelIndicator2.BackColor = System.Drawing.Color.Silver
+        Me.panelIndicator2.BaseColor = System.Drawing.Color.DimGray
+        Me.panelIndicator2.Location = New System.Drawing.Point(-114, 175)
+        Me.panelIndicator2.Name = "panelIndicator2"
+        Me.panelIndicator2.Size = New System.Drawing.Size(120, 85)
+        Me.panelIndicator2.TabIndex = 6
+        Me.panelIndicator2.TabStop = False
+        '
+        'panelIndicator1
+        '
+        Me.panelIndicator1.BackColor = System.Drawing.Color.Silver
+        Me.panelIndicator1.BaseColor = System.Drawing.Color.DimGray
+        Me.panelIndicator1.Location = New System.Drawing.Point(-114, 84)
+        Me.panelIndicator1.Name = "panelIndicator1"
+        Me.panelIndicator1.Size = New System.Drawing.Size(120, 85)
+        Me.panelIndicator1.TabIndex = 5
+        Me.panelIndicator1.TabStop = False
+        '
         'logOutBtn
         '
         Me.logOutBtn.AnimationHoverSpeed = 0.07!
@@ -86,11 +125,11 @@ Partial Class Form3
         Me.logOutBtn.DialogResult = System.Windows.Forms.DialogResult.None
         Me.logOutBtn.FocusedColor = System.Drawing.Color.Empty
         Me.logOutBtn.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.logOutBtn.ForeColor = System.Drawing.Color.DimGray
+        Me.logOutBtn.ForeColor = System.Drawing.Color.Black
         Me.logOutBtn.Image = CType(resources.GetObject("logOutBtn.Image"), System.Drawing.Image)
         Me.logOutBtn.ImageOffsetX = 14
-        Me.logOutBtn.ImageSize = New System.Drawing.Size(35, 35)
-        Me.logOutBtn.Location = New System.Drawing.Point(0, 609)
+        Me.logOutBtn.ImageSize = New System.Drawing.Size(40, 40)
+        Me.logOutBtn.Location = New System.Drawing.Point(0, 633)
         Me.logOutBtn.Name = "logOutBtn"
         Me.logOutBtn.OnHoverBaseColor = System.Drawing.Color.Gainsboro
         Me.logOutBtn.OnHoverBorderColor = System.Drawing.Color.Black
@@ -113,10 +152,10 @@ Partial Class Form3
         Me.PanelBtn3.DialogResult = System.Windows.Forms.DialogResult.None
         Me.PanelBtn3.FocusedColor = System.Drawing.Color.Empty
         Me.PanelBtn3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelBtn3.ForeColor = System.Drawing.Color.DimGray
+        Me.PanelBtn3.ForeColor = System.Drawing.Color.Black
         Me.PanelBtn3.Image = CType(resources.GetObject("PanelBtn3.Image"), System.Drawing.Image)
-        Me.PanelBtn3.ImageOffsetX = 14
-        Me.PanelBtn3.ImageSize = New System.Drawing.Size(20, 20)
+        Me.PanelBtn3.ImageOffsetX = 11
+        Me.PanelBtn3.ImageSize = New System.Drawing.Size(45, 45)
         Me.PanelBtn3.Location = New System.Drawing.Point(0, 266)
         Me.PanelBtn3.Name = "PanelBtn3"
         Me.PanelBtn3.OnHoverBaseColor = System.Drawing.Color.Gainsboro
@@ -126,8 +165,8 @@ Partial Class Form3
         Me.PanelBtn3.OnPressedColor = System.Drawing.Color.Black
         Me.PanelBtn3.Size = New System.Drawing.Size(220, 85)
         Me.PanelBtn3.TabIndex = 3
-        Me.PanelBtn3.Text = "Panel 3"
-        Me.PanelBtn3.TextOffsetX = 40
+        Me.PanelBtn3.Text = "Account"
+        Me.PanelBtn3.TextOffsetX = 15
         '
         'PanelBtn2
         '
@@ -139,10 +178,10 @@ Partial Class Form3
         Me.PanelBtn2.DialogResult = System.Windows.Forms.DialogResult.None
         Me.PanelBtn2.FocusedColor = System.Drawing.Color.Empty
         Me.PanelBtn2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelBtn2.ForeColor = System.Drawing.Color.DimGray
+        Me.PanelBtn2.ForeColor = System.Drawing.Color.Black
         Me.PanelBtn2.Image = CType(resources.GetObject("PanelBtn2.Image"), System.Drawing.Image)
-        Me.PanelBtn2.ImageOffsetX = 14
-        Me.PanelBtn2.ImageSize = New System.Drawing.Size(20, 20)
+        Me.PanelBtn2.ImageOffsetX = 11
+        Me.PanelBtn2.ImageSize = New System.Drawing.Size(48, 51)
         Me.PanelBtn2.Location = New System.Drawing.Point(0, 175)
         Me.PanelBtn2.Name = "PanelBtn2"
         Me.PanelBtn2.OnHoverBaseColor = System.Drawing.Color.Gainsboro
@@ -152,8 +191,8 @@ Partial Class Form3
         Me.PanelBtn2.OnPressedColor = System.Drawing.Color.Black
         Me.PanelBtn2.Size = New System.Drawing.Size(220, 85)
         Me.PanelBtn2.TabIndex = 2
-        Me.PanelBtn2.Text = "Panel 2"
-        Me.PanelBtn2.TextOffsetX = 40
+        Me.PanelBtn2.Text = "Financial Flow"
+        Me.PanelBtn2.TextOffsetX = 15
         '
         'PanelBtn1
         '
@@ -165,10 +204,10 @@ Partial Class Form3
         Me.PanelBtn1.DialogResult = System.Windows.Forms.DialogResult.None
         Me.PanelBtn1.FocusedColor = System.Drawing.Color.Empty
         Me.PanelBtn1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelBtn1.ForeColor = System.Drawing.Color.DimGray
+        Me.PanelBtn1.ForeColor = System.Drawing.Color.Black
         Me.PanelBtn1.Image = CType(resources.GetObject("PanelBtn1.Image"), System.Drawing.Image)
-        Me.PanelBtn1.ImageOffsetX = 14
-        Me.PanelBtn1.ImageSize = New System.Drawing.Size(20, 20)
+        Me.PanelBtn1.ImageOffsetX = 10
+        Me.PanelBtn1.ImageSize = New System.Drawing.Size(50, 50)
         Me.PanelBtn1.Location = New System.Drawing.Point(0, 84)
         Me.PanelBtn1.Name = "PanelBtn1"
         Me.PanelBtn1.OnHoverBaseColor = System.Drawing.Color.Gainsboro
@@ -178,8 +217,8 @@ Partial Class Form3
         Me.PanelBtn1.OnPressedColor = System.Drawing.Color.Black
         Me.PanelBtn1.Size = New System.Drawing.Size(220, 85)
         Me.PanelBtn1.TabIndex = 1
-        Me.PanelBtn1.Text = "Panel 1"
-        Me.PanelBtn1.TextOffsetX = 40
+        Me.PanelBtn1.Text = "Project Creation"
+        Me.PanelBtn1.TextOffsetX = 15
         '
         'Panel4
         '
@@ -197,7 +236,7 @@ Partial Class Form3
         Me.panelBtn.AnimationHoverSpeed = 0.07!
         Me.panelBtn.AnimationSpeed = 0.03!
         Me.panelBtn.BackColor = System.Drawing.Color.Transparent
-        Me.panelBtn.BaseColor = System.Drawing.Color.Transparent
+        Me.panelBtn.BaseColor = System.Drawing.Color.Black
         Me.panelBtn.BorderColor = System.Drawing.Color.Transparent
         Me.panelBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.panelBtn.DialogResult = System.Windows.Forms.DialogResult.None
@@ -210,10 +249,10 @@ Partial Class Form3
         Me.panelBtn.Location = New System.Drawing.Point(0, 0)
         Me.panelBtn.Name = "panelBtn"
         Me.panelBtn.OnHoverBaseColor = System.Drawing.Color.White
-        Me.panelBtn.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.panelBtn.OnHoverBorderColor = System.Drawing.Color.Transparent
         Me.panelBtn.OnHoverForeColor = System.Drawing.Color.Black
         Me.panelBtn.OnHoverImage = Nothing
-        Me.panelBtn.OnPressedColor = System.Drawing.Color.DarkGray
+        Me.panelBtn.OnPressedColor = System.Drawing.Color.Gray
         Me.panelBtn.OnPressedDepth = 0
         Me.panelBtn.Size = New System.Drawing.Size(85, 65)
         Me.panelBtn.TabIndex = 0
@@ -309,7 +348,7 @@ Partial Class Form3
         Me.startUpBtn.AnimationHoverSpeed = 0.07!
         Me.startUpBtn.AnimationSpeed = 0.03!
         Me.startUpBtn.BackColor = System.Drawing.Color.Transparent
-        Me.startUpBtn.BaseColor1 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.startUpBtn.BaseColor1 = System.Drawing.Color.RoyalBlue
         Me.startUpBtn.BaseColor2 = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.startUpBtn.BorderColor = System.Drawing.Color.Transparent
         Me.startUpBtn.DialogResult = System.Windows.Forms.DialogResult.None
@@ -323,7 +362,7 @@ Partial Class Form3
         Me.startUpBtn.Location = New System.Drawing.Point(120, 250)
         Me.startUpBtn.Name = "startUpBtn"
         Me.startUpBtn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.startUpBtn.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.startUpBtn.OnHoverBaseColor2 = System.Drawing.Color.RoyalBlue
         Me.startUpBtn.OnHoverBorderColor = System.Drawing.Color.BlanchedAlmond
         Me.startUpBtn.OnHoverForeColor = System.Drawing.Color.White
         Me.startUpBtn.OnHoverImage = Nothing
@@ -384,6 +423,9 @@ Partial Class Form3
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form3"
         Me.PanelMenu.ResumeLayout(False)
+        CType(Me.panelIndicator3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.panelIndicator2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.panelIndicator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.PanelContainer.ResumeLayout(False)
         Me.PanelContainer.PerformLayout()
@@ -415,4 +457,7 @@ Partial Class Form3
     Friend WithEvents Clock As Timer
     Friend WithEvents GunaPictureBox2 As Guna.UI.WinForms.GunaPictureBox
     Friend WithEvents startUpBtn As Guna.UI.WinForms.GunaGradientButton
+    Friend WithEvents panelIndicator3 As Guna.UI.WinForms.GunaPictureBox
+    Friend WithEvents panelIndicator2 As Guna.UI.WinForms.GunaPictureBox
+    Friend WithEvents panelIndicator1 As Guna.UI.WinForms.GunaPictureBox
 End Class
