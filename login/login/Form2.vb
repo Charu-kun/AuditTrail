@@ -1,4 +1,9 @@
-﻿Public Class Form2
+﻿Imports System.Data.SqlClient
+Imports MySql.Data.MySqlClient
+
+Public Class Form2
+    Dim MysqlConn As MySqlConnection
+    Dim COMMAND As MySqlCommand
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
@@ -60,16 +65,45 @@
     End Sub
 
     Private Sub logInBtn_MouseClick(sender As Object, e As MouseEventArgs) Handles logInBtn.MouseClick
-        Me.Hide()
-        Form3.Show()
+        MysqlConn = New MySqlConnection()
+        MysqlConn.ConnectionString = "server=localhost;userid=root;password=root;database=info"
+        Dim READER As MySqlDataReader
+
+        Try
+            MysqlConn.Open()
+            Dim Query As String
+            Query = "SELECT * FROM accounts where username = '" & TextBox1.Text & "' and password = '" & TextBox2.Text & "' "
+            COMMAND = New MySqlCommand(Query, MysqlConn)
+            READER = Command.ExecuteReader()
+
+            Dim count As Integer
+
+            count = 0
+            While READER.Read
+                count = count + 1
+            End While
+
+            If count = 1 Then
+                MessageBox.Show("Username and Password are correct")
+                Me.Close()
+                Form3.Show()
+            ElseIf count > 1 Then
+                MessageBox.Show("Username and Password are duplicated")
+            Else
+                MessageBox.Show("Username and Password are not correct")
+            End If
+
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            TextBox1.Text = ""
+            TextBox2.Text = ""
+            MysqlConn.Dispose()
+        End Try
     End Sub
 
-    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
 
-    End Sub
-
-    Private Sub logInBtn_Click(sender As Object, e As EventArgs) Handles logInBtn.Click
-
-    End Sub
 End Class
 

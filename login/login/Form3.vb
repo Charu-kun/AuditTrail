@@ -1,6 +1,6 @@
 ﻿Public Class Form3
 
-    Sub childform(ByVal panel As Form)
+    Public Sub childform(ByVal panel As Form)
         contentPane.Controls.Clear()
         panel.TopLevel = False
         contentPane.Controls.Add(panel)
@@ -37,20 +37,26 @@
 
     Private Sub logOutBtn_Click(sender As Object, e As EventArgs) Handles logOutBtn.Click
         If MsgBox("Do you want to log out?", MsgBoxStyle.YesNo Or MsgBoxStyle.Question, "Log Out?") = MsgBoxResult.Yes Then
-            Me.Hide()
+            Me.Close()
             Form2.Show()
         End If
     End Sub
 
     Private Sub PanelBtn1_Click(sender As Object, e As EventArgs) Handles PanelBtn1.Click
         childform(panelForm1)
+        panelForm1.AllClear()
+        panelForm2.Close()
+        panelForm3.Close()
     End Sub
 
     Private Sub PanelBtn2_Click(sender As Object, e As EventArgs) Handles PanelBtn2.Click
         childform(panelForm2)
+        panelForm3.Close()
     End Sub
 
     Private Sub PanelBtn3_Click(sender As Object, e As EventArgs) Handles PanelBtn3.Click
+        panelForm1.Close()
+        panelForm2.Close()
         childform(panelForm3)
     End Sub
 
@@ -65,4 +71,5 @@
         End If
         childform(panelForm1)
     End Sub
+
 End Class
